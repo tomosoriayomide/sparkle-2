@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chukwuemeka Ruth | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --deep-brown: #5C4033;
+            --terracotta: #A67B5B;
+            --beige: #EAD8C0;
+            --white: #FFFFFF;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--white);
+            color: var(--deep-brown);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Hero Section */
+        header {
+            height: 80vh;
+            background-color: var(--beige);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-bottom: 15px solid var(--terracotta);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* The "Circle" Design from your slides */
+        header::before {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: var(--terracotta);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+            opacity: 0.3;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 10vw, 5rem);
+            margin: 0;
+            animation: fadeIn 2s ease-in;
+        }
+
+        .subtitle {
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            font-weight: 300;
+            margin-top: 10px;
+            color: var(--terracotta);
+        }
+
+        section {
+            padding: 80px 10%;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            border-bottom: 3px solid var(--terracotta);
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        /* Skills Layout */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            background: #fdfaf7;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 10px 0;
+            font-weight: bold;
+            border-bottom: 1px solid var(--beige);
+        }
+
+        /* Portfolio Cards */
+        .portfolio-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--beige);
+            padding: 40px 20px;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            background-color: var(--deep-brown);
+            color: var(--white);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Footer / Contact */
+        footer {
+            background-color: var(--deep-brown);
+            color: var(--white);
+            padding: 60px 10%;
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--beige);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="hero-content">
+            <h1>Chukwuemeka Ruth</h1>
+            <p class="subtitle">Graphic Designer</p>
+        </div>
+    </header>
+
+    <section id="about">
+        <h2>Introduction</h2>
+        <p>I am a passionate graphic designer with 4 years of experience in the industry. My journey began with a love for art and creativity, which evolved into a career dedicated to crafting compelling visual narratives.</p>
+        <p>With a strong belief in the power of design to communicate ideas and evoke emotions, I strive to create impactful visuals that resonate with audiences.</p>
+    </section>
+
+    <section id="skills">
+        <h2>Skills & Expertise</h2>
+        <div class="skills-grid">
+            <ul>
+                <li>✨ Identity Design</li>
+                <li>📰 Print Design</li>
+                <li>📱 Digital Design</li>
+            </ul>
+            <ul>
+                <li>🎨 Illustration</li>
+                <li>📸 Photo Editing</li>
+                <li>🖋️ Typography</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <h2>Portfolio Overview</h2>
+        <div class="portfolio-categories">
+            <div class="card">Branding Projects</div>
+            <div class="card">Web Design Projects</div>
+            <div class="card">Print Design</div>
+            <div class="card">Illustration</div>
+        </div>
+    </section>
+
+    <footer>
+        <h2>Get In Touch</h2>
+        <p>📍 Abuja, Nigeria</p>
+        <p>📞 09063353160</p>
+        <p>✉️ <a href="mailto:chukwuemekaruth2025@gmail.com">chukwuemekaruth2025@gmail.com</a></p>
+        <p>🌐 <a href="https://Chukwuemekalfunanya.com" target="_blank">Chukwuemekalfunanya.com</a></p>
+        <br>
+        <p style="font-size: 0.8rem; opacity: 0.6;">&copy; 2026 Chukwuemeka Ruth Portfolio</p>
+    </footer>
+
+</body>
+</html>
