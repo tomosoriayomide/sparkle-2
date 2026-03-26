@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Chukwuemeka Ruth — Graphic Designer</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --brown: #5c2e0e;
+  --brown2: #7a3f1a;
+  --warm: #a0522d;
+  --beige: #f5f0ea;
+  --light: #fdfaf6;
+  --muted: #c4a882;
+  --text: #2c1810;
+  --circle1: #8B4513;
+  --circle2: #d4b896;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--light);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  position: fixed; top:0; left:0; right:0; z-index:100;
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 20px 60px;
+  background: rgba(253,250,246,0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(92,46,14,0.1);
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--brown);
+  letter-spacing: 1px;
+}
+.nav-links { display:flex; gap:36px; }
+.nav-links a {
+  font-size: .85rem;
+  color: var(--brown2);
+  text-decoration: none;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: color .3s;
+  position: relative;
+}
+.nav-links a::after {
+  content:''; position:absolute; bottom:-4px; left:0;
+  width:0; height:2px; background:var(--brown);
+  transition: width .3s;
+}
+.nav-links a:hover { color: var(--brown); }
+.nav-links a:hover::after { width:100%; }
+
+/* CIRCLES DECORATION */
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 60px 80px;
+  position: relative;
+  overflow: hidden;
+  background: var(--light);
+}
+.hero-circle-big {
+  width: 500px; height: 500px;
+  background: var(--brown);
+  top: -100px; left: -150px;
+  opacity: 0.12;
+}
+.hero-circle-small {
+  width: 120px; height: 120px;
+  background: var(--circle2);
+  bottom: 100px; left: 300px;
+  opacity: 0.6;
+}
+.hero-circle-accent {
+  width: 60px; height: 60px;
+  background: var(--circle2);
+  top: 200px; right: 100px;
+  opacity: 0.5;
+}
+.hero-content {
+  position: relative; z-index:1;
+  flex: 1;
+  max-width: 600px;
+}
+.hero-tag {
+  display: inline-block;
+  background: var(--brown);
+  color: #fff;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-size: .8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 28px;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--brown);
+  margin-bottom: 24px;
+}
+.hero h1 span { color: var(--warm); }
+.hero p {
+  font-size: 1.05rem;
+  color: #6b4226;
+  line-height: 1.8;
+  max-width: 480px;
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+.btn-primary {
+  display: inline-block;
+  background: var(--brown);
+  color: #fff;
+  padding: 16px 40px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: .9rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: all .3s;
+  margin-right: 16px;
+}
+/* sparkle */
+.sparkle{
+  border-radius: 100%;
+  width: 300px;
+  height: 300px;
+}
+.brand{
+  width: 100%;
+  height: 100%;
+}
+.btn-primary:hover { background: var(--brown2); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(92,46,14,.3); }
+.btn-outline {
+  display: inline-block;
+  border: 2px solid var(--brown);
+  color: var(--brown);
+  padding: 14px 40px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: .9rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: all .3s;
+}
+.btn-outline:hover { background: var(--brown); color:#fff; transform: translateY(-2px); }
+
+.hero-image-wrap {
+  position: relative; z-index:1;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-img-ring {
+  width: 380px; height: 380px;
+  border-radius: 50%;
+  background: var(--brown);
+  display: flex; align-items:center; justify-content:center;
+  position: relative;
+}
+.hero-img-ring::before {
+  content:'';
+  position:absolute;
+  width:420px; height:420px;
+  border-radius:50%;
+  border: 2px solid rgba(92,46,14,.2);
+}
+.hero-img-ring::after {
+  content:'';
+  position:absolute;
+  width:460px; height:460px;
+  border-radius:50%;
+  border: 1px solid rgba(92,46,14,.1);
+}
+.hero-img {
+  width: 350px; height: 350px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid #fff;
+}
+.hero-img-placeholder {
+  width: 350px; height: 350px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d4b896, #a0522d);
+  display: flex; align-items:center; justify-content:center;
+  border: 6px solid #fff;
+  font-family: 'Playfair Display', serif;
+  font-size: 5rem;
+  font-weight: 900;
+  color: #fff;
+}
+
+/* SECTION COMMON */
+section { padding: 100px 60px; position: relative; overflow: hidden; }
+.section-label {
+  font-size: .75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+  margin-bottom: 12px;
+  display: block;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 900;
+  color: var(--brown);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+/* INTRO */
+.intro {
+  background: var(--brown);
+  color: #fff;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.intro-circle1 {
+  width: 300px; height: 300px;
+  border: 3px solid rgba(255,255,255,.1);
+  top: -80px; right: -80px;
+}
+.intro-circle2 {
+  width: 200px; height: 200px;
+  border: 2px solid rgba(255,255,255,.07);
+  bottom: -60px; left: 200px;
+}
+.intro .section-label { color: var(--circle2); }
+.intro .section-title { color: #fff; }
+.intro p {
+  color: rgba(255,255,255,.8);
+  line-height: 1.9;
+  font-size: 1rem;
+  font-weight: 300;
+}
+.intro-tag {
+  display: inline-block;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.2);
+  color: #fff;
+  padding: 6px 20px;
+  border-radius: 50px;
+  font-size: .75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+/* ABOUT */
+.about {
+  background: var(--beige);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.about-img-wrap {
+  position: relative;
+  display: flex; align-items:center; justify-content:center;
+}
+.about-ring {
+  width: 380px; height: 380px;
+  border-radius: 50%;
+  border: 4px solid var(--brown);
+  display: flex; align-items:center; justify-content:center;
+  position: relative;
+}
+.about-inner-ring {
+  width: 340px; height: 340px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--brown), var(--warm));
+  display: flex; align-items:center; justify-content:center;
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  font-weight: 900;
+  color: #fff;
+}
+.about-deco1 {
+  width: 100px; height: 100px;
+  background: var(--brown);
+  opacity: 0.15;
+  bottom: 0; left: 0;
+}
+.about-deco2 {
+  width: 60px; height: 60px;
+  background: var(--circle2);
+  top: 20px; right: 20px;
+  opacity: 0.7;
+}
+.about p {
+  color: #5a3520;
+  line-height: 1.9;
+  font-size: 1rem;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+.about-stats {
+  display: flex; gap: 40px; margin-top: 32px;
+}
+.stat-box { text-align: center; }
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--brown);
+  line-height: 1;
+}
+.stat-label {
+  font-size: .75rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-top: 6px;
+}
+
+/* SKILLS */
+.skills { background: var(--light); }
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 60px;
+}
+.skill-card {
+  background: #fff;
+  border: 1px solid rgba(92,46,14,.1);
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: all .3s;
+  cursor: default;
+}
+.skill-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--brown);
+  box-shadow: 0 12px 40px rgba(92,46,14,.12);
+}
+.skill-num {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  border: 2px solid var(--brown);
+  display: flex; align-items:center; justify-content:center;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--brown);
+  flex-shrink: 0;
+}
+.skill-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--brown);
+  letter-spacing: .5px;
+}
+.skill-desc {
+  font-size: .82rem;
+  color: #8a6040;
+  margin-top: 4px;
+  font-weight: 300;
+}
+
+/* PORTFOLIO */
+.portfolio { background: var(--beige); }
+.portfolio-intro {
+  max-width: 600px;
+  margin-bottom: 60px;
+}
+.portfolio-intro p {
+  color: #6b4226;
+  line-height: 1.8;
+  font-weight: 300;
+}
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.portfolio-card {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all .3s;
+  box-shadow: 0 4px 20px rgba(92,46,14,.06);
+}
+.portfolio-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 50px rgba(92,46,14,.15);
+}
+.portfolio-card-img {
+  height: 400px;
+  background: linear-gradient(135deg, var(--brown), var(--warm));
+  display: flex; align-items:center; justify-content:center;
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: rgba(255,255,255,.3);
+  font-weight: 900;
+  letter-spacing: 2px;
+  position: relative;
+  overflow: hidden;
+}
+.portfolio-card-img::before {
+  content:'';
+  position:absolute;
+  width: 150px; height: 150px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.08);
+  top: -30px; right: -30px;
+}
+.portfolio-card-img::after {
+  content:'';
+  position:absolute;
+  width: 100px; height: 100px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.05);
+  bottom: -20px; left: -20px;
+}
+.portfolio-card-body { padding: 24px; }
+.portfolio-card-tag {
+  display: inline-block;
+  background: rgba(92,46,14,.08);
+  color: var(--brown);
+  padding: 4px 14px;
+  border-radius: 50px;
+  font-size: .72rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.portfolio-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--brown);
+  margin-bottom: 8px;
+}
+.portfolio-card p {
+  font-size: .85rem;
+  color: #8a6040;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* SOFTWARE */
+.software { background: var(--brown); color: #fff; text-align: center; }
+.software .section-label { color: var(--circle2); }
+.software .section-title { color: #fff; }
+.software-subtitle {
+  color: rgba(255,255,255,.7);
+  font-size: 1rem;
+  font-weight: 300;
+  max-width: 500px;
+  margin: 0 auto 60px;
+  line-height: 1.8;
+}
+.software-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.software-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  transition: transform .3s;
+}
+.software-item:hover { transform: translateY(-6px); }
+.software-icon {
+  width: 80px; height: 80px;
+  border-radius: 20px;
+  display: flex; align-items:center; justify-content:center;
+  font-size: 1.8rem;
+  font-weight: 900;
+  font-family: 'Playfair Display', serif;
+  border: 1px solid rgba(255,255,255,.2);
+}
+.ps-icon { background: #001e36; color: #31a8ff; }
+.ai-icon { background: #2b1300; color: #ff9a00; }
+.canva-icon { background: #7d2ae8; color: #fff; }
+.inshot-icon { background: #ff4c4c; color: #fff; }
+.software-name {
+  font-size: .8rem;
+  color: rgba(255,255,255,.7);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* CONTACT */
+.contact {
+  background: var(--light);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.contact-ring {
+  width: 250px; height: 250px;
+  border: 4px solid var(--brown);
+  top: 50px; left: -80px;
+  opacity: 0.12;
+}
+.contact-ring2 {
+  width: 180px; height: 180px;
+  border: 3px solid var(--brown);
+  bottom: 50px; right: -50px;
+  opacity: 0.08;
+}
+.contact p {
+  color: #6b4226;
+  line-height: 1.8;
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+.contact-items { display: flex; flex-direction: column; gap: 20px; }
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.contact-icon {
+  width: 48px; height: 48px;
+  background: var(--brown);
+  border-radius: 50%;
+  display: flex; align-items:center; justify-content:center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+.contact-item a, .contact-item span {
+  color: var(--brown2);
+  text-decoration: none;
+  font-size: .95rem;
+  font-weight: 500;
+  transition: color .2s;
+}
+.contact-item a:hover { color: var(--brown); }
+.contact-right { position: relative; z-index:1; }
+.contact-card {
+  background: var(--brown);
+  border-radius: 24px;
+  padding: 50px 40px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.contact-card::before {
+  content:'';
+  position:absolute;
+  width:200px; height:200px;
+  border-radius:50%;
+  background: rgba(255,255,255,.06);
+  top:-60px; right:-60px;
+}
+.contact-card::after {
+  content:'';
+  position:absolute;
+  width:150px; height:150px;
+  border-radius:50%;
+  background: rgba(255,255,255,.04);
+  bottom:-40px; left:-40px;
+}
+.contact-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 12px;
+  position:relative;z-index:1;
+}
+.contact-card p {
+  color: rgba(255,255,255,.8);
+  font-size: .9rem;
+  margin-bottom: 28px;
+  position:relative;z-index:1;
+}
+.contact-card a {
+  display: inline-block;
+  background: #fff;
+  color: var(--brown);
+  padding: 14px 36px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: .85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all .3s;
+  position:relative;z-index:1;
+}
+.contact-card a:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,.2); }
+
+/* FOOTER */
+footer {
+  background: var(--text);
+  color: rgba(255,255,255,.6);
+  text-align: center;
+  padding: 40px 60px;
+  font-size: .85rem;
+  letter-spacing: 1px;
+}
+footer span { color: var(--muted); font-family: 'Playfair Display', serif; font-size:1rem; }
+
+/* SCROLL ANIMATION */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media(max-width:900px) {
+  nav { padding: 16px 24px; }
+  .nav-links { display:none; }
+  section { padding: 70px 24px; }
+  .hero { padding: 100px 24px 60px; flex-direction: column; text-align:center; }
+  .hero-image-wrap { margin-top: 40px; }
+  .hero-img-ring, .hero-img, .hero-img-placeholder { width:260px; height:260px; }
+  .intro, .about, .contact { grid-template-columns:1fr; gap:40px; }
+  .skills-grid, .portfolio-grid { grid-template-columns:1fr; }
+  .about-img-wrap { display:none; }
+  .software-grid { gap: 24px; }
+  .sparkle{width: 200px; height: 200px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">CR.</div>
+  <div class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="circle hero-circle-big"></div>
+  <div class="circle hero-circle-small"></div>
+  <div class="circle hero-circle-accent"></div>
+  <div class="hero-content fade-in">
+    <div class="hero-tag">Graphic Designer</div>
+    <h1>Chukwuemeka<br/><span>Ruth</span></h1>
+    <p>Here, you'll find a curated collection of my work that reflects my passion for visual storytelling and creative expression.</p>
+    <a href="#portfolio" class="btn-primary">View My Work</a>
+    <a href="#contact" class="btn-outline">Get In Touch</a>
+  </div>
+  <div class="hero-image-wrap fade-in">
+    <div class="hero-img-ring">
+      <div class="hero-img-placeholder"><img src="/image/sparkle.jpeg" alt="" class="sparkle"></div>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro" id="intro">
+  <div class="circle intro-circle1"></div>
+  <div class="circle intro-circle2"></div>
+  <div class="fade-in">
+    <span class="section-label">Welcome</span>
+    <h2 class="section-title">Welcome to<br/>My Portfolio!</h2>
+  </div>
+  <div class="fade-in">
+    <div class="intro-tag">Timmerman Industries</div>
+    <p>Here, you'll find a curated collection of my work that reflects my passion for visual storytelling and creative expression. With a strong belief in the power of design to communicate ideas and evoke emotions, I strive to create impactful visuals that resonate with audiences.</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-img-wrap fade-in">
+    <div class="circle about-deco1"></div>
+    <div class="circle about-deco2"></div>
+    <div class="about-ring">
+      <div class="about-inner-ring"><img src="/image/sparkle2.jpeg" alt="" class="sparkle"></div>
+    </div>
+  </div>
+  <div class="fade-in">
+    <span class="section-label">Who I Am</span>
+    <h2 class="section-title">About Me</h2>
+    <p>Hello! I am Chukwuemeka Ruth, a passionate graphic designer with 4 years of experience in the industry. My journey into design began with a love for art and creativity, which evolved into a career dedicated to crafting compelling visual narratives.</p>
+    <p>I believe that great design is not just about aesthetics — it's about solving problems and communicating ideas in the most impactful way possible.</p>
+    <div class="about-stats">
+      <div class="stat-box">
+        <div class="stat-num">4+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">6</div>
+        <div class="stat-label">Core Skills</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">100+</div>
+        <div class="stat-label">Projects Done</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills" id="skills">
+  <div class="fade-in" style="text-align:center;max-width:600px;margin:0 auto 0;">
+    <span class="section-label">What I Do</span>
+    <h2 class="section-title">Skills & Expertise</h2>
+    <p style="color:#6b4226;line-height:1.8;font-weight:300;">As a graphic designer, I have developed a diverse skill set that allows me to tackle a variety of projects with creativity and precision.</p>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-card fade-in">
+      <div class="skill-num">1</div>
+      <div>
+        <div class="skill-name">Identity Design</div>
+        <div class="skill-desc">Logo design, brand guidelines & visual identity systems</div>
+      </div>
+    </div>
+    <div class="skill-card fade-in">
+      <div class="skill-num">2</div>
+      <div>
+        <div class="skill-name">Illustration</div>
+        <div class="skill-desc">Custom graphics and artwork for various projects</div>
+      </div>
+    </div>
+    <div class="skill-card fade-in">
+      <div class="skill-num">3</div>
+      <div>
+        <div class="skill-name">Print Design</div>
+        <div class="skill-desc">Brochures, posters, packaging and print collateral</div>
+      </div>
+    </div>
+    <div class="skill-card fade-in">
+      <div class="skill-num">4</div>
+      <div>
+        <div class="skill-name">Photo Editing</div>
+        <div class="skill-desc">Professional photo retouching and manipulation</div>
+      </div>
+    </div>
+    <div class="skill-card fade-in">
+      <div class="skill-num">5</div>
+      <div>
+        <div class="skill-name">Digital Design</div>
+        <div class="skill-desc">Social media graphics, digital ads and web visuals</div>
+      </div>
+    </div>
+    <div class="skill-card fade-in">
+      <div class="skill-num">6</div>
+      <div>
+        <div class="skill-name">Typography</div>
+        <div class="skill-desc">Custom type design and typographic layouts</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio" id="portfolio">
+  <div class="portfolio-intro fade-in">
+    <span class="section-label">My Work</span>
+    <h2 class="section-title">Portfolio Overview</h2>
+    <p>Welcome to my graphic design portfolio — a curated collection that showcases my diverse skills, creativity, and experience across various design disciplines.</p>
+  </div>
+  <div class="portfolio-grid">
+    <div class="portfolio-card fade-in">
+      <div class="portfolio-card-img"><img src="/image/brand.jfif" alt="" class="brand"></div>
+      <div class="portfolio-card-body">
+        <div class="portfolio-card-tag">Branding</div>
+        <h3>Branding Projects</h3>
+        <p>Explore my work in crafting unique brand identities — logo design, color palettes, typography and brand guidelines.</p>
+      </div>
+    </div>
+    <div class="portfolio-card fade-in">
+      <div class="portfolio-card-img" style="background:linear-gradient(135deg,#3a1a0a,#7a3f1a);">WEB</div>
+      <div class="portfolio-card-body">
+        <div class="portfolio-card-tag">Web Design</div>
+        <h3>Web Design Projects</h3>
+        <p>Responsive designs, e-commerce integrations and custom layouts that enhance online interactions and engagement.</p>
+      </div>
+    </div>
+    <div class="portfolio-card fade-in">
+      <div class="portfolio-card-img" style="background:linear-gradient(135deg,#6b2e0a,#c0622a);">PRINT</div>
+      <div class="portfolio-card-body">
+        <div class="portfolio-card-tag">Print</div>
+        <h3>Print Design</h3>
+        <p>Brochures, posters and packaging designs that communicate effectively and leave a lasting impression.</p>
+      </div>
+    </div>
+    <div class="portfolio-card fade-in">
+      <div class="portfolio-card-img" style="background:linear-gradient(135deg,#2a1005,#8b4513);">ILLUS</div>
+      <div class="portfolio-card-body">
+        <div class="portfolio-card-tag">Illustration</div>
+        <h3>Illustration</h3>
+        <p>Custom graphics and artwork that enrich various projects — highlighting creativity and versatility in visual storytelling.</p>
+      </div>
+    </div>
+    <div class="portfolio-card fade-in">
+      <div class="portfolio-card-img" style="background:linear-gradient(135deg,#4a1a00,#a06020);">PHOTO</div>
+      <div class="portfolio-card-body">
+        <div class="portfolio-card-tag">Photo Editing</div>
+        <h3>Photo Editing</h3>
+        <p>Professional photo retouching, color correction and compositing for brands and individuals.</p>
+      </div>
+    </div>
+    <div class="portfolio-card fade-in">
+      <div class="portfolio-card-img" style="background:linear-gradient(135deg,#5c1a08,#b05030);">SOCIAL</div>
+      <div class="portfolio-card-body">
+        <div class="portfolio-card-tag">Digital</div>
+        <h3>Social Media Design</h3>
+        <p>Eye-catching graphics for social media campaigns, ads and digital marketing materials.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOFTWARE -->
+<section class="software">
+  <span class="section-label fade-in">Tools I Use</span>
+  <h2 class="section-title fade-in">Software</h2>
+  <p class="software-subtitle fade-in">Here are some of the software I make use of to bring creative visions to life.</p>
+  <div class="software-grid">
+    <div class="software-item fade-in">
+      <div class="software-icon ps-icon">Ps</div>
+      <div class="software-name">Photoshop</div>
+    </div>
+    <div class="software-item fade-in">
+      <div class="software-icon ai-icon">Ai</div>
+      <div class="software-name">Illustrator</div>
+    </div>
+    <div class="software-item fade-in">
+      <div class="software-icon canva-icon" style="font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:700;">Canva</div>
+      <div class="software-name">Canva</div>
+    </div>
+    <div class="software-item fade-in">
+      <div class="software-icon inshot-icon" style="font-size:1.2rem;">▶</div>
+      <div class="software-name">InShot</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="circle contact-ring"></div>
+  <div class="circle contact-ring2"></div>
+  <div class="fade-in">
+    <span class="section-label">Get In Touch</span>
+    <h2 class="section-title">Contact Information</h2>
+    <p>Thank you for visiting, and I hope you find inspiration in my work! Feel free to reach out for collaborations or projects.</p>
+    <div class="contact-items">
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <span>Abuja, Nigeria</span>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <a href="tel:09063353160">09063353160</a>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">✉️</div>
+        <a href="mailto:chukwuekaruth2025@gmail.com">chukwuekaruth2025@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🌐</div>
+        <a href="https://ChukwuemekaIfunanya.com" target="_blank">ChukwuemekaIfunanya.com</a>
+      </div>
+    </div>
+  </div>
+  <div class="contact-right fade-in">
+    <div class="contact-card">
+      <h3>Let's Work Together</h3>
+      <p>Have a project in mind? I'd love to hear about it and bring your vision to life.</p>
+      <a href="mailto:chukwuekaruth2025@gmail.com">Start a Project</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>Chukwuemeka Ruth</span> &nbsp;—&nbsp; Graphic Designer &nbsp;·&nbsp; Abuja, Nigeria &nbsp;·&nbsp; © 2026 All rights reserved.
+</footer>
+
+<script>
+// Scroll fade-in observer
+const fadeEls = document.querySelectorAll('.fade-in');
+const fadeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(el => {
+    if (el.isIntersecting) {
+      el.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15 });
+fadeEls.forEach(el => fadeObserver.observe(el));
+
+// Trigger hero immediately
+document.querySelectorAll('.hero .fade-in').forEach(el => {
+  setTimeout(() => el.classList.add('visible'), 200);
+});
+</script>
+</body>
+</html> 
